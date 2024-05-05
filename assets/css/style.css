@@ -2,7 +2,8 @@
 
 body {
   background-color: #0a3a4a;
-  margin: 0.75em;
+  margin: 0.5em;
+  box-sizing: border-box;
   font-family: sans-serif;
   color: #e0e0e0;
 }
@@ -34,15 +35,13 @@ button:hover {
 /*** Grid ***/
 .container {
   display: grid;
-  min-height: 100vh;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 0.3fr 1.5fr 1fr 0.1fr;
-  gap: 0.5em;
+  width: 100%;
+
   grid-template-areas:
-    "hd hd hd hd"
-    "sidebar main main main"
-    "sidebar main main main"
-    "footer footer footer footer";
+    "hd"
+    "sidebar"
+    "main"
+    "footer";
 }
 
 /*** Header ***/
@@ -50,22 +49,22 @@ button:hover {
 .header {
   grid-area: hd;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  padding: 10px;
+  margin-bottom: 15px;
   border: 4px solid #009975;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
 
 h1 {
-  font-size: 2.5rem;
-  padding-left: 5px;
+  font-size: 2rem;
+  padding-bottom: 10px;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 15px;
+  margin: 15px;
   padding: 10px;
   color: #e0e0e0;
   background-color: #009975;
@@ -79,11 +78,11 @@ nav ul li:hover {
 
 /*** Sidebar ***/
 input {
-  width: 75%;
+  width: 80%;
 }
 
 .search-bar {
-  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .sidebar {
@@ -92,6 +91,7 @@ input {
   flex-direction: column;
   justify-content: space-between;
   padding: 8px;
+  margin-bottom: 15px;
   border: 3px solid #009975;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -99,7 +99,7 @@ input {
 
 .sidebar h3 {
   text-align: center;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
 
 .search-bar {
@@ -107,7 +107,7 @@ input {
 }
 
 .sidebar-list {
-  margin: 0 auto;
+  margin: 0px auto;
   line-height: 2em;
 }
 
@@ -115,13 +115,21 @@ input {
   color: #e0e0e0;
   background-color: #009975;
   border-radius: 10px;
-  margin: 5px;
+  margin: 10px;
   padding: 5px;
   transition: 0.3s;
 }
 
 .sidebar-list a li:hover {
   background-color: #400a81;
+}
+
+.newsletter {
+  margin: 15px;
+}
+
+.newsletter input {
+  width: 70%;
 }
 
 .about {
@@ -145,25 +153,28 @@ input {
 main,
 .blog-card-container {
   grid-area: main;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .blog-card-container {
+  max-width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   justify-items: flex-start;
 }
 
 .blog-card {
-  width: 400px;
-  height: 400px;
-  margin: 5px 25px 25px 0;
+  max-width: 100%;
   background-color: #163252;
   border: 4px solid #009975;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   padding: 10px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,22 +206,13 @@ main,
 /*** Footer ***/
 
 footer {
-  background-color: paleturquoise;
   grid-area: footer;
+  text-align: center;
 }
 
-/* Blog Post */
+/* Blog Post Page*/
 
-.blog-post-container {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 0.3fr 1.5fr 1fr 0.1fr;
-  min-height: 100vh;
-  grid-template-areas:
-    "hd hd"
-    "sidebar main"
-    "footer footer";
-}
+/* */
 
 .blog-post-card {
   margin: 25px;
@@ -223,4 +225,74 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/*** Media Queries ***/
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav ul li {
+    display: inline;
+  }
+}
+
+.newsletter {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.newsletter input {
+  width: 60%;
+  display: block;
+  margin: 5px auto;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1 fr auto;
+    gap: 1em;
+    grid-template-areas:
+      "hd hd hd hd"
+      "sidebar main main main"
+      "sidebar main main main"
+      "footer footer footer footer";
+  }
+  main {
+    min-height: calc(100vh - (120px + 50px));
+  }
+
+  .blog-card-container {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  .blog-card {
+    width: 400px;
+    height: 400px;
+    margin: 15px;
+  }
+
+  /* Blog Post Page*/
+  .blog-post-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 3fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 1em;
+    min-height: 100vh;
+    grid-template-areas:
+      "hd hd"
+      "sidebar main"
+      "footer footer";
+  }
+
+  .blog-content {
+    max-width: 1100px;
+  }
 }
