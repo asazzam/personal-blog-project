@@ -12,9 +12,9 @@
         <h1>Wanderlust Chronicles</h1>
         <nav>
           <ul>
-            <a href="index.html"><li>Home</li></a>
-            <a href="#posts"><li>Posts</li></a>
-            <a href="#about"><li>About</li></a>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#posts">Posts</a></li>
+            <li><a href="#about">About</a></li>
           </ul>
         </nav>
       </header>
@@ -22,24 +22,33 @@
       <main>
         <section class="blog-post">
           <article class="blog-post-card">
-            <div class="blog-content">
+            <div class="blog-post-content">
               <h3>Serenity Now: Exploring the Quiet Lakeside</h3>
-              <img src="https://picsum.photos/id/128/0" alt="" />
+              <img
+                src="https://picsum.photos/id/128/0"
+                alt="A lake with mountains in the background."
+              />
+              <p class="image-caption">
+                Photo: A serene view of the quiet lakeside, perfect for a
+                weekend getaway.
+              </p>
               <p>
                 Four dollar toast tonx prism echo park actually. Roof party
-                irony fixie enamel pin hella viral man braid jawn next level
-                meggings. Health goth solarpunk mukbang hexagon gastropub keytar
-                3 wolf moon ascot post-ironic PBR&B. Mustache deep v gentrify
-                pug before they sold out same 90's roof party pinterest you
-                probably haven't heard of them vice flexitarian cloud bread
-                vaporware.
+                irony fixie enamel pin hella viral man
+                <u>braid jawn next</u> level meggings. Health goth solarpunk
+                mukbang hexagon gastropub keytar 3 wolf moon ascot post-ironic
+                PBR&B. Mustache deep v gentrify pug before they sold out same
+                90's roof party pinterest
+                <em>you probably haven't heard of them</em> vice flexitarian
+                cloud bread vaporware.
                 <br />
                 <br />
                 Chillwave raw denim ennui, beard seitan vibecession fit
                 humblebrag. Knausgaard viral hell of, freegan readymade
-                typewriter semiotics swag umami yuccie unicorn chicharrones.
-                Everyday carry tattooed man braid pop-up. Biodiesel kitsch craft
-                beer health goth banjo shaman.
+                typewriter semiotics swag umami yuccie
+                <strong><u>unicorn chicharrones</u></strong
+                >. Everyday carry tattooed man braid pop-up. Biodiesel kitsch
+                craft beer health goth banjo shaman.
                 <br />
                 <br />
                 Mumblecore fanny pack chicharrones, artisan pabst marxism mlkshk
@@ -51,31 +60,35 @@
                 spyplane. XOXO hammock cliche, fit hashtag taxidermy roof party
                 try-hard seitan tote bag asymmetrical.
               </p>
+
+              <p></p>
             </div>
           </article>
 
-          <div class="recommended-section">
-            <h3>Recommended Posts</h3>
-            <div class="recommended-cards">
-              <div class="blog-card small">
-                <img
-                  src="https://picsum.photos/id/200/0"
-                  alt="Descriptive Alt Text"
-                />
-                <h4>Exploring Hidden Gems</h4>
-                <a href="blog.html" class="read-more"
-                  ><button>Read More</button></a
-                >
-              </div>
-              <div class="blog-card small">
-                <img
-                  src="https://picsum.photos/id/43/0"
-                  alt="Descriptive Alt Text"
-                />
-                <h4>Cityscapes: Urban Beauty</h4>
-                <a href="blog.html" class="read-more"
-                  ><button>Read More</button></a
-                >
+          <div class="recommended-container">
+            <div class="recommended-section">
+              <h3>Recommended Posts</h3>
+              <div class="recommended-cards">
+                <div class="blog-card small">
+                  <img
+                    src="https://picsum.photos/id/200/0"
+                    alt="A highland cow standing next to water."
+                  />
+                  <h4>Exploring Hidden Gems</h4>
+                  <a href="blog.html" class="read-more"
+                    ><button>Read More</button></a
+                  >
+                </div>
+                <div class="blog-card small">
+                  <img
+                    src="https://picsum.photos/id/43/0"
+                    alt="A black-and-white picture of the Brooklyn bridge with the city skyline behind it."
+                  />
+                  <h4>Cityscapes: Urban Beauty</h4>
+                  <a href="blog.html" class="read-more"
+                    ><button>Read More</button></a
+                  >
+                </div>
               </div>
             </div>
           </div>
@@ -84,7 +97,12 @@
 
       <aside class="sidebar">
         <div class="search-bar">
-          <input type="text" placeholder="Search..." /><button type="submit">
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Search..."
+          /><button type="submit" aria-label="Search">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
@@ -92,17 +110,23 @@
         <div class="sidebar-list" id="posts">
           <h3>Blog Posts</h3>
           <ul>
-            <a href="#"><li>Blog Post #1</li></a>
-            <a href="#"><li>Blog Post #2</li></a>
-            <a href="#"><li>Blog Post #3</li></a>
-            <a href="#"><li>Blog Post #4</li></a>
-            <a href="#"><li>Blog Post #5</li></a>
+            <li><a href="#">Blog Post #1</a></li>
+            <li><a href="#">Blog Post #2</a></li>
+            <li><a href="#">Blog Post #3</a></li>
+            <li><a href="#">Blog Post #4</a></li>
+            <li><a href="#">Blog Post #5</a></li>
           </ul>
         </div>
 
         <div class="newsletter">
           <h3>Subscribe to our Newsletter</h3>
-          <input type="email" placeholder="Enter your email" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            placeholder="Enter your email"
+          />
           <button type="submit">Subscribe</button>
         </div>
 
