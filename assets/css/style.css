@@ -261,6 +261,10 @@ input {
   padding-top: 10px;
 }
 
+.social-icons i:hover {
+  color: #00695c;
+}
+
 /*** Footer ***/
 
 footer {
