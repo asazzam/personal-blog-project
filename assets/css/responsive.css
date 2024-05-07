@@ -32,9 +32,19 @@
 
 .blog-post-content img {
   width: 600px;
-  padding: 15px;
+  padding: 5px;
   height: auto;
   text-align: center;
+}
+
+.recommended-cards {
+  display: flex;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.blog-card.small {
+  margin: 0 30px;
 }
 
 @media (min-width: 1200px) {
@@ -81,7 +91,7 @@
 
   .blog-post-content img {
     width: 600px;
-    padding: 15px;
+    padding: 5px;
     height: auto;
     text-align: center;
   }
